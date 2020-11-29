@@ -9,4 +9,7 @@ CODE CHÍNH TRONG FILE MainWindows.xaml
 - Nguyễn Quốc Khánh - 18020685  
 ## Thông tin về bài tập:
 - Lời giải các bài tập Incline - tạo ra ứng dụng mặt đồng hồ nằm file [này](WpfApp1/WpfApp1/MainWindow.xaml)
-- Các sản phẩm ứng dụng của nhóm nằm trong các file sau: [Cối xay gió](WpfApp1/WpfApp1/MainWindow.xaml), [Mặt trời](XAML_Applications/MatTroi.xaml), [Con lắc](XAML_Applications/ConLacDon.xaml)
+![Clock](/Images/DongHo.gif)
+- Các sản phẩm ứng dụng của nhóm nằm trong các file sau: [Cối xay gió](WpfApp1/WpfApp1/MainWindow.xaml), [Mặt trời](XAML_Applications/MatTroi.xaml), [Con lắc](XAML_Applications/ConLacDon.xaml) 
+![Windmill](Images/CoiXayGio.gif) ![ConLacDon](/Images/ConLacDon.gif)
+![Sun](/Images/MatTroi.gif)
