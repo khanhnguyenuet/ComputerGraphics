@@ -1,0 +1,120 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Background="Aqua">
+    <Canvas
+        ClipToBounds="True" HorizontalAlignment="Center" Width="220" Height="223" VerticalAlignment="Center">
+        <Canvas.Resources>
+            <ControlTemplate x:Key="PropellerTemplate">
+                <Polyline Points="0,0 70,0 65,5 15,5 15,0"
+                      Stroke="Yellow"
+                      StrokeThickness="2" Canvas.Left="81" Canvas.Top="54"/>
+            </ControlTemplate>
+        </Canvas.Resources>
+        <Rectangle Width="47" Height="100" Canvas.Left="10" Canvas.Top="26">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="DarkGray">
+                </SolidColorBrush>
+            </Rectangle.Fill>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform X="60" Y="66"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Polygon Points="0,0 8,5, 0,10"
+             Fill="Green" RenderTransformOrigin="0.5,0.5" Width="8" Canvas.Left="89" Canvas.Top="69">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="-90"/>
+                    <ScaleTransform ScaleX="10.0" ScaleY="4.5"
+                                CenterX="0" CenterY="0"/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+        </Polygon>
+        <Control Name="Propeller1"
+             Template="{StaticResource PropellerTemplate}" Canvas.Left="94" Canvas.Top="80">
+            <Control.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="0"/>
+                    <RotateTransform x:Name="ToAngle_1" Angle="90"/>
+                </TransformGroup>
+            </Control.RenderTransform>
+        </Control>
+        <Control Name="Propeller2"
+                 Template="{StaticResource PropellerTemplate}" Canvas.Left="94" Canvas.Top="80" RenderTransformOrigin="0.00,0.">
+            <Control.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <RotateTransform x:Name="ToAngle_2" Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Control.RenderTransform>
+        </Control>
+        <Control Name="Propeller3"
+                 Template="{StaticResource PropellerTemplate}" Canvas.Left="94" Canvas.Top="80" RenderTransformOrigin="-0.00,0.00">
+            <Control.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180."/>
+                    <RotateTransform x:Name="ToAngle_3" Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Control.RenderTransform>
+        </Control>
+        <Control Name="Propeller4"
+                 Template="{StaticResource PropellerTemplate}" Canvas.Left="94" Canvas.Top="80" RenderTransformOrigin="0,0">
+            <Control.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270."/>
+                    <RotateTransform x:Name="ToAngle_4" Angle="360"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Control.RenderTransform>
+        </Control>
+        <Canvas.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="2.0" ScaleY="2.0"/>
+                <TranslateTransform X="-100.0" Y="-100.0"/>
+            </TransformGroup>
+        </Canvas.RenderTransform>
+        <Canvas.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                            Storyboard.TargetName="ToAngle_1"
+                            Storyboard.TargetProperty="Angle"
+                            From="0.0" To="360.0"
+                            Duration="00:00:05.00" RepeatBehavior="Forever"/>
+                        <DoubleAnimation
+                            Storyboard.TargetName="ToAngle_2"
+                            Storyboard.TargetProperty="Angle"
+                            From="0.0" To="360.0"
+                            Duration="00:00:05.00" RepeatBehavior="Forever"/>
+                        <DoubleAnimation
+                            Storyboard.TargetName="ToAngle_3"
+                            Storyboard.TargetProperty="Angle"
+                            From="0.0" To="360.0"
+                            Duration="00:00:05.00" RepeatBehavior="Forever"/>
+                        <DoubleAnimation
+                            Storyboard.TargetName="ToAngle_4"
+                            Storyboard.TargetProperty="Angle"
+                            From="0.0" To="360.0"
+                            Duration="00:00:05.00" RepeatBehavior="Forever"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Canvas.Triggers>
+    </Canvas>
+</Window>
